@@ -2,4 +2,4 @@
 
 git clone https://github.com/celiberato/KAFKA_DOCKER_COMPOSE_EXECUTANDO.git
 
-liberar porta 8080
+liberar porta 9092

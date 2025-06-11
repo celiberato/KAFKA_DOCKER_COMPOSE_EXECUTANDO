@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.interview.demo</groupId>
-	<artifactId>kafka</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>app</artifactId>
+	<version>v1</version>
 	<name>interview</name>
 	<description>Projeto Kafka Spring Boot</description>
 	<url />

@@ -1,5 +1,5 @@
 
-sudo docker build -t app-v1:tag .
+sudo docker build -t app-v1:latest .
 
 
 

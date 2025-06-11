@@ -1,20 +1,27 @@
 https://gist.github.com/vipmax/9ceeaa02932ba276fa810c923dbcbd4f
 
 sudo adduser kafka
+
 sudo adduser kafka sudo
+
 su -l kafka
 
 cd /opt                                                              # go to /opt folder
 
 curl  https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz -O   # download archive to folder
+
 tar -zxvf kafka*.tgz                                                 # extract archive 
+
 rm kafka*.tgz                                                        # remove archive 
+
 ln -s kafka_2.13-3.2.0/ kafka                                        # create symbolic link  
 
 
 
 # just creates a file with the following content  -----------
+
 cat <<EOF > /etc/systemd/system/kafka-zookeeper.service            
+
 
 [Unit]
 Description=Apache Zookeeper server (Kafka)
@@ -36,6 +43,7 @@ EOF
 ---------------------
 
 # just creates a file with the following content  
+
 cat <<EOF > /etc/systemd/system/kafka.service
 
 [Unit]
@@ -61,24 +69,36 @@ EOF
 3 * Edit service files
 
 nano /etc/systemd/system/kafka-zookeeper.service
+
 nano /etc/systemd/system/kafka.service
+
+
 4. Edit kafka settings
 
 nano /opt/kafka/config/server.properties
+
 listeners=PLAINTEXT://{{IP || 192.168.0.103}}:9092
+
 5. Reload and start the systemd services
 
 systemctl daemon-reload
+
 systemctl enable kafka-zookeeper.service
+
 systemctl enable kafka.service
+
 systemctl start kafka-zookeeper.service
+
 systemctl start kafka.service
 
 systemctl status kafka-zookeeper.service
+
 systemctl status kafka.service
+
 6. Check services state
 
 systemctl status kafka-zookeeper.service
+
 systemctl status kafka.service
 
 

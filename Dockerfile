@@ -2,7 +2,7 @@ FROM maven:3.6.3-openjdk-17 AS build-app
 
 COPY . /opt/
 WORKDIR /opt
-RUN mkdir -p /app-v1
+RUN mkdir -p /app
 RUN mvn clean -DskipTests
 RUN mvn package -DskipTests
 

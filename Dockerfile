@@ -15,5 +15,5 @@ FROM maven:3.6.1-alpine
 
 COPY --from=build-app /app/app-v1.jar /opt/
 WORKDIR /opt
-EXPOSE 3024
+EXPOSE 9081
 ENTRYPOINT [ "java", "-jar","app-v1.jar" ]

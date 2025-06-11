@@ -1,3 +1,10 @@
+
+sudo docker build -t app-v1:tag .
+
+
+
+
+----------
 https://gist.github.com/vipmax/9ceeaa02932ba276fa810c923dbcbd4f
 
 sudo adduser kafka

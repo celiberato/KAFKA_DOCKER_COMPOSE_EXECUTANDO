@@ -1,19 +1,11 @@
-FROM maven:3.6.3-openjdk-17 AS build-app
+# Usando uma imagem base do OpenJDK
+FROM openjdk:17-jdk-alpine
 
-COPY . /opt/
-WORKDIR /opt
-RUN mkdir -p /app
-RUN mvn clean -DskipTests
-RUN mvn package -DskipTests
+# Definindo o diretório de trabalho dentro do contêiner
+WORKDIR /app
 
-RUN ls
-RUN mv target/*.jar /app/app-v1.jar
-RUN ls /app
+# Copiando o arquivo JAR para o contêiner
+COPY target/app-v1.jar ap-v1.jar
 
-
-FROM maven:3.6.1-alpine
-
-COPY --from=build-app /app/app-v1.jar /opt/
-WORKDIR /opt
-EXPOSE 9081
-ENTRYPOINT [ "java", "-jar","app-v1.jar" ]
+# Definindo o comando de inicialização
+ENTRYPOINT ["java", "-jar", "app-v1.jar"]

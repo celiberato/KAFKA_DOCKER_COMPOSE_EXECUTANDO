@@ -15,7 +15,7 @@ public class KafkaDemoProducer {
 
 
 	    KafkaProducer<String, String> producer = new KafkaProducer<>(props);
-	    producer.send(new ProducerRecord<>("my-topic", "key", "Hello world!"));
+	    producer.send(new ProducerRecord<>("test-topic", "key", "Hello world!"));
 	    producer.close();
 	    
 	    return "OK";

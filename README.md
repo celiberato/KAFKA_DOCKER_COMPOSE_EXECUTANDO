@@ -1,6 +1,7 @@
 
 sudo docker build -t app-v1:latest .
 
+sudo docker run app-v1:latest
 
 
 

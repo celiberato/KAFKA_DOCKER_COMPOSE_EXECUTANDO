@@ -12,8 +12,3 @@ spring:
       port: 27017
       host: localhost
 
-services:
-  broker-1:
-    hostname: broker-kafka
-    ports:
-    - "9094:9094"

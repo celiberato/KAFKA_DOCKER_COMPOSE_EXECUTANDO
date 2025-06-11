@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copiando o arquivo JAR para o contêiner
-COPY target/app-v1.jar app-v1.jar
+COPY target/app-v1.jar app.jar
 
 # Definindo o comando de inicialização
-ENTRYPOINT ["java", "-jar", "app-v1.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

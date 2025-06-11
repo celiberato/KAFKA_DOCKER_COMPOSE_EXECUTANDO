@@ -1,0 +1,19 @@
+server:
+  port: 9081
+  servlet:
+    context-path: /kafka-demo
+
+spring:
+  application:
+    name: 'kafka-demo'
+  data:
+    mongodb:
+      database: kafka-demo
+      port: 27017
+      host: localhost
+
+services:
+  broker-1:
+    hostname: broker-kafka
+    ports:
+    - "9094:9094"

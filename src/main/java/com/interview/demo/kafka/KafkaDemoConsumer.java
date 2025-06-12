@@ -28,15 +28,16 @@ public class KafkaDemoConsumer {
         consumer.subscribe(Collections.singletonList(topic));
         consumer.seekToBeginning(consumer.assignment());
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         
         sb.append("[CONSUMINDO PRÓXIMAS MENSAGENS]: tópico: " + topic);
-        ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));
+        ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+        
+        
+        sb.append(records.count());
         
         for (ConsumerRecord<String, String> record : records) {
-        	
-        	System.out.println("=================="  + record.toString());
-        	
+        	      	
         	String result = 
         			String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",
                     record.key(), record.value(), record.partition(), record.offset());

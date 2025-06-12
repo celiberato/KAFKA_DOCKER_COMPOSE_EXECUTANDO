@@ -89,7 +89,7 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
-            <version>YOUR_CONFLUENT_VERSION</version>
+            <version>7.4.0</version>
         </dependency>
 		
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
@@ -173,6 +173,10 @@
 				<enabled>false</enabled>
 			</releases>
 		</repository>
+	    <repository>
+	        <id>confluent</id>
+	        <url>https://packages.confluent.io/maven/</url>
+	    </repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>

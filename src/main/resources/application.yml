@@ -11,4 +11,13 @@ spring:
       database: kafka-demo
       port: 27017
       host: localhost
-
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      compression-type: snappy # Configura o tipo de compressão que deve ser aplicado às mensagens
+      acks: all # Configura o acks para "all" para garantir que todas as réplicas confirmem o recebimento da mensagem
+      retries: 3 # Configura o número de tentativas que o producer deve realizar para enviar a mensagem
+    template:
+      default-topic: test-topic

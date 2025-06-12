@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.interview.demo.entity.Cliente;
+import com.interview.demo.kafka.KafkaDemoConsumer;
 import com.interview.demo.kafka.KafkaDemoProducer;
 import com.interview.demo.model.response.ClienteResponse;
 import com.interview.demo.repository.ClienteRepository;
@@ -33,11 +34,19 @@ public class KafkaController {
 
 	
 	@GetMapping("/produzir")
-	@Operation(summary = "Produs mensagens Kafka", description = "Produs mensagens Kafka")
-	public String enviar() {
+	@Operation(summary = "Produz mensagens Kafka", description = "Produz mensagens Kafka")
+	public String produzir() {
 		KafkaDemoProducer producer = new KafkaDemoProducer();
 		
-		return producer.enviar();
+		return producer.executar();
+	}
+
+	@GetMapping("/consumir")
+	@Operation(summary = "Consme mensagens Kafka", description = "Consome  mensagens Kafka")
+	public String consumir() {
+		KafkaDemoConsumer consumer = new KafkaDemoConsumer();
+		
+		return consumer.executar();
 	}
 
 	@GetMapping("/nada")

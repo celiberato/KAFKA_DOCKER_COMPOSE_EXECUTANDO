@@ -21,3 +21,5 @@ spring:
       retries: 3 # Configura o número de tentativas que o producer deve realizar para enviar a mensagem
     template:
       default-topic: test-topic
+    consumer:
+      group-id: test-consumidor

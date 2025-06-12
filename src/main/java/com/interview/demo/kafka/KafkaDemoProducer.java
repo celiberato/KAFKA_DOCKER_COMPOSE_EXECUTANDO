@@ -13,6 +13,7 @@ public class KafkaDemoProducer {
 		props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer"); 
 		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
+		props.put("acks", "1");
 
 	    KafkaProducer<String, String> producer = new KafkaProducer<>(props);
 	    

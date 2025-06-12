@@ -29,10 +29,12 @@ public class KafkaDemoConsumer {
 
         StringBuffer sb = new StringBuffer();
         
-        sb.append("[CONSUMINDO PRÓXIMAS 10 MENSAGENS]: tópico: " + topic);
+        sb.append("[CONSUMINDO PRÓXIMAS MENSAGENS]: tópico: " + topic);
         ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));
         
         for (ConsumerRecord<String, String> record : records) {
+        	
+        	System.out.println("=================="  + record.toString());
         	
         	String result = 
         			String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",

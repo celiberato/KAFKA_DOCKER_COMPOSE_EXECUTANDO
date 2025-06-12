@@ -30,7 +30,7 @@ public class KafkaDemoConsumer {
         StringBuffer sb = new StringBuffer();
         
         sb.append("[CONSUMINDO PRÓXIMAS 10 MENSAGENS]: tópico: " + topic);
-        for(int i = 0; i<10; i++) {
+        for(int i = 0; i<100; i++) {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
             for (ConsumerRecord<String, String> record : records) {
             	

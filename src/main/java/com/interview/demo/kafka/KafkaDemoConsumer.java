@@ -35,5 +35,6 @@ public class KafkaDemoConsumer {
                         record.key(), record.value(), record.partition(), record.offset());
             }
         }
+        return "[CONSUMER}";
     }
 }

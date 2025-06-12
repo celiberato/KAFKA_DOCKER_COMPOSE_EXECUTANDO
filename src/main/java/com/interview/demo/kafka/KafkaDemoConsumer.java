@@ -33,12 +33,24 @@ public class KafkaDemoConsumer {
         
         sb.append("[CONSUMINDO PRÓXIMAS MENSAGENS]: tópico: " + topic);
         ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-        
+
+        sb.append("<br/> >>> PASSO 1");
+        java.util.Map<String,java.util.List<PartitionInfo>> listTopics = consumer.listTopics();
+        System.out.println("list of topic size :" + listTopics.size());
+        for(String topic2 : listTopics.keySet()){
+            System.out.println("topic name :"+topic2);
+        }
+
+        sb.append("<br/> >>> PASSO 2");
         
         sb.append(records.count());
         
+        sb.append("<br/> >>> PASSO 3");
+
         for (ConsumerRecord<String, String> record : records) {
         	      	
+            sb.append("<br/> >>> PASSO 4");
+        	
         	String result = 
         			String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",
                     record.key(), record.value(), record.partition(), record.offset());
@@ -46,12 +58,8 @@ public class KafkaDemoConsumer {
         	sb.append(result);
         }
         
+        sb.append("<br/> >>> PASSO 5");
         
-        java.util.Map<String,java.util.List<PartitionInfo>> listTopics = consumer.listTopics();
-        System.out.println("list of topic size :" + listTopics.size());
-        for(String topic2 : listTopics.keySet()){
-            System.out.println("topic name :"+topic2);
-        }
         return sb.toString();
     }
 }

@@ -30,16 +30,14 @@ public class KafkaDemoConsumer {
         StringBuffer sb = new StringBuffer();
         
         sb.append("[CONSUMINDO PRÓXIMAS 10 MENSAGENS]: tópico: " + topic);
-        for(int i = 0; i<10; i++) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-            for (ConsumerRecord<String, String> record : records) {
-            	
-            	String result = 
-            			String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",
-                        record.key(), record.value(), record.partition(), record.offset());
-            	
-            	sb.append(result);
-            }
+        ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+        for (ConsumerRecord<String, String> record : records) {
+        	
+        	String result = 
+        			String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",
+                    record.key(), record.value(), record.partition(), record.offset());
+        	
+        	sb.append(result);
         }
         return sb.toString();
     }

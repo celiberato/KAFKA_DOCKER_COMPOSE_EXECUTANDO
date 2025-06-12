@@ -18,9 +18,10 @@ public class KafkaDemoProducer {
 	    
 	    StringBuffer sb = new StringBuffer();
 	    for (int i=0; i<10; i++) {
-		    producer.send(new ProducerRecord<>("test-topic", "key", "Hello world! " + i));
+	    	String result = "<br/>[ENVIANDO!] MENSAGEM: " + i;
+		    producer.send(new ProducerRecord<>("test-topic", "key", result));
 		    
-		    sb.append("/n >>> Hello world! " + i);
+		    sb.append(result);
 	    }
 	    producer.close();
 	    

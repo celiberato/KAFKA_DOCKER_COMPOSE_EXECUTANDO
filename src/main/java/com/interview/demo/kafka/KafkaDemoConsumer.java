@@ -28,7 +28,7 @@ public class KafkaDemoConsumer {
         consumer.subscribe(Collections.singletonList(topic));
 
         System.out.println("Consumindo mensagens do tópico: " + topic);
-        while (true) {
+        for(int i = 0; i<10; i++) {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
             for (ConsumerRecord<String, String> record : records) {
                 System.out.printf("Recebido: chave=%s, valor=%s, partição=%d, offset=%d%n",

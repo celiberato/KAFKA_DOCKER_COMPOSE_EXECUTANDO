@@ -4,6 +4,14 @@ sudo docker build -t app-v1:latest .
 sudo docker run app-v1:latest
 
  sudo chmod 777 /data/zookeeper/zookeeper_server.pid
+
+ cat logs/server.log
+
+ 
+journalctl -u zookeeper.service --no-pager | tail -50
+
+sudo chown -R zookeeper:zookeeper /var/lib/zookeeper
+sudo systemctl restart zookeeper****
  
 =====================
 sudo nano /etc/systemd/system/kafka.service

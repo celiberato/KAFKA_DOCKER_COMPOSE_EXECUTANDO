@@ -10,8 +10,8 @@ COPY .mvn .mvn
 COPY src src
 
 # Baixando dependências e compilando o projeto
-RUN ./mvnw dependency:resolve
-RUN ./mvnw package
+RUN mvn dependency:resolve
+RUN mvn package
 
 # Criando uma nova imagem para execução
 FROM openjdk:17-jdk-slim

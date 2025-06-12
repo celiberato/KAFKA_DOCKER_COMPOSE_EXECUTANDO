@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping(value = {"/kafka"})
-@Tag(name = "Kafka", description = "Produs e consome mensagens via kafka")
+@Tag(name = "Kafka", description = "Produz e consome mensagens via kafka")
 public class KafkaController {
 
 	ClienteMapper mapper = new ClienteMapper();

@@ -3,7 +3,42 @@ sudo docker build -t app-v1:latest .
 
 sudo docker run app-v1:latest
 
+=====================
+sudo nano /etc/systemd/system/kafka.service
+[Unit]
+Requires=zookeeper.service
+After=zookeeper.service
 
+[Service]
+Type=simple
+User=kafka
+ExecStart=/bin/sh -c '/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties > /opt/kafka/kafka.log 2>&1'
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
+===============================
+
+sudo nano /etc/systemd/system/zookeeper.service
+[Unit]
+Description=Apache Zookeeper Server
+After=network.target
+
+[Service]
+Type=simple
+User=kafka
+ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties
+ExecStop=/opt/kafka/bin/zookeeper-server-stop.sh
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
+===============================
+
+sudo systemctl daemon-reload
+sudo systemctl enable kafka
+sudo systemctl start kafka
 
 ----------
 https://gist.github.com/vipmax/9ceeaa02932ba276fa810c923dbcbd4f

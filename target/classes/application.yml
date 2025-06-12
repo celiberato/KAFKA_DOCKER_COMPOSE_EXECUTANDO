@@ -22,4 +22,5 @@ spring:
     template:
       default-topic: test-topic
     consumer:
+      bootstrap-servers: localhost:9092
       group-id: test-consumidor

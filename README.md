@@ -5,6 +5,8 @@ sudo docker run app-v1:latest
 
 http://learn.conduktor.io/kafka/how-to-install-apache-kafka-on-linux/
 
+~/kafka_2.13-3.0.0/bin/kafka-server-start.sh ~/kafka_2.13-3.0.0/config/server.properties
+
  sudo chmod 777 /data/zookeeper/zookeeper_server.pid
 
  cat logs/server.log

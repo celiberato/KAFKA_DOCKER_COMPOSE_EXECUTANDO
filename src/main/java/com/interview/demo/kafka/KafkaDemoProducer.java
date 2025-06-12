@@ -15,10 +15,16 @@ public class KafkaDemoProducer {
 
 
 	    KafkaProducer<String, String> producer = new KafkaProducer<>(props);
-	    producer.send(new ProducerRecord<>("test-topic", "key", "Hello world!"));
+	    
+	    StringBuffer sb = new StringBuffer();
+	    for (int i=0; i<10; i++) {
+		    producer.send(new ProducerRecord<>("test-topic", "key", "Hello world! " + i));
+		    
+		    sb.append("/n >>> Hello world! " + i);
+	    }
 	    producer.close();
 	    
-	    return "OK";
+	    return sb.toString();
 	}
 
 }

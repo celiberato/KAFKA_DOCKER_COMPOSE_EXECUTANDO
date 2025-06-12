@@ -78,7 +78,12 @@
 		    <artifactId>spring-kafka</artifactId>
 		    <version>4.0.0-M2</version>
 		</dependency>
-		
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+		<dependency>
+		    <groupId>org.apache.kafka</groupId>
+		    <artifactId>kafka-clients</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 		<dependency>

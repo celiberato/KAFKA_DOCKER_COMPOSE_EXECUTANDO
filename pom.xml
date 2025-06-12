@@ -85,6 +85,13 @@
 		    <version>4.0.0</version>
 		</dependency>
 		
+		<!-- Maven -->
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>YOUR_CONFLUENT_VERSION</version>
+        </dependency>
+		
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
 		<dependency>
 			<groupId>javax.validation</groupId>

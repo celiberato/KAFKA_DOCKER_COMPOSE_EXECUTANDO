@@ -40,4 +40,10 @@ public class KafkaController {
 		return producer.enviar();
 	}
 
+	@GetMapping("/nada")
+	@Operation(summary = "Produs mensagens Kafka", description = "Produs mensagens Kafka")
+	public String nada() {
+		return "OK!";
+	}
+
 }

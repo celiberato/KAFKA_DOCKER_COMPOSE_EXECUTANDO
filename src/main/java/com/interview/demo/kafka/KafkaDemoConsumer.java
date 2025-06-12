@@ -8,6 +8,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.PartitionInfo;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 public class KafkaDemoConsumer {
@@ -43,6 +44,13 @@ public class KafkaDemoConsumer {
                     record.key(), record.value(), record.partition(), record.offset());
         	
         	sb.append(result);
+        }
+        
+        
+        java.util.Map<String,java.util.List<PartitionInfo>> listTopics = consumer.listTopics();
+        System.out.println("list of topic size :" + listTopics.size());
+        for(String topic2 : listTopics.keySet()){
+            System.out.println("topic name :"+topic2);
         }
         return sb.toString();
     }

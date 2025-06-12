@@ -26,6 +26,7 @@ public class KafkaDemoConsumer {
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
         consumer.subscribe(Collections.singletonList(topic));
+        consumer.seekToBeginning(consumer.assignment());
 
         StringBuffer sb = new StringBuffer();
         

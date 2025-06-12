@@ -7,6 +7,15 @@ http://learn.conduktor.io/kafka/how-to-install-apache-kafka-on-linux/
 
 ~/kafka_2.13-3.0.0/bin/kafka-server-start.sh ~/kafka_2.13-3.0.0/config/server.properties
 
+
+In order to easily access the Kafka binaries, you can edit your PATH variable by adding the following line to your system run commands (for example ~/.zshrc if you use zshrc or ~/.bashrc for Bash ):
+
+PATH="$PATH:~/kafka_2.13-3.0.0/bin"  
+
+
+
+
+
  sudo chmod 777 /data/zookeeper/zookeeper_server.pid
 
  cat logs/server.log

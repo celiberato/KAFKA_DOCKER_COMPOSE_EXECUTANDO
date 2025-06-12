@@ -3,6 +3,8 @@ sudo docker build -t app-v1:latest .
 
 sudo docker run app-v1:latest
 
+ sudo chmod 777 /data/zookeeper/zookeeper_server.pid
+ 
 =====================
 sudo nano /etc/systemd/system/kafka.service
 [Unit]

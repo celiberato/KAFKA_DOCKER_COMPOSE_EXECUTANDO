@@ -35,9 +35,10 @@ public class KafkaController {
 	@GetMapping("/produzir")
 	@Operation(summary = "Produs mensagens Kafka", description = "Produs mensagens Kafka")
 	public String enviar() {
-		KafkaDemoProducer producer = new KafkaDemoProducer();
+//		KafkaDemoProducer producer = new KafkaDemoProducer();
 		
-		return producer.enviar();
+//		return producer.enviar();
+		return "OK";
 	}
 
 }

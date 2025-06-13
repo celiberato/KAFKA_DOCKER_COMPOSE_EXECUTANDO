@@ -41,14 +41,6 @@ public class KafkaController {
 		return producer.executar();
 	}
 
-	@GetMapping("/consumir")
-	@Operation(summary = "Consme mensagens Kafka", description = "Consome  mensagens Kafka")
-	public String consumir() {
-		KafkaDemoConsumer consumer = new KafkaDemoConsumer();
-		
-		return consumer.executar();
-	}
-
 	@GetMapping("/nada")
 	@Operation(summary = "Produs mensagens Kafka", description = "Produs mensagens Kafka")
 	public String nada() {

@@ -35,7 +35,7 @@ public class KafkaDemoConsumer {
 			sb = new StringBuilder();
 			
 			sb.append("[CONSUMINDO PRÓXIMAS MENSAGENS]: tópico: " + topic);
-			ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+			ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(2000));
 
 			sb.append("<br/> >>> PASSO 1");
 			java.util.Map<String,java.util.List<PartitionInfo>> listTopics = consumer.listTopics();

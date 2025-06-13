@@ -24,7 +24,7 @@ spring:
     consumer:
       bootstrap-servers: localhost:9092
       group-id: test-consumidor
-    h2:
-      console:
-        enabled: true
-        path: /h2-console
+  h2:
+    console:
+      enabled: true
+      path: /h2-console

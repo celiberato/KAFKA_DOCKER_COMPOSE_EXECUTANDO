@@ -7,6 +7,10 @@ sudo tar xzf kafka_2.12-3.7.0.tgz
 
 sudo mv kafka_2.12-3.7.0 /opt/kafka
 
+]sudo bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group test-consumidor --describe
+
+
+
 sudo nano /etc/systemd/system/zookeeper.service
 
 

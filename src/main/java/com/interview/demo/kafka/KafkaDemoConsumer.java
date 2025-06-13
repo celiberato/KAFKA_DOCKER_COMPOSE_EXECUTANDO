@@ -25,40 +25,46 @@ public class KafkaDemoConsumer {
         props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         props.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Collections.singletonList(topic));
-        consumer.seekToBeginning(consumer.assignment());
-
-        StringBuilder sb = new StringBuilder();
         
-        sb.append("[CONSUMINDO PRÓXIMAS MENSAGENS]: tópico: " + topic);
-        ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+        StringBuilder sb;
+		try {
+			KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
+			consumer.subscribe(Collections.singletonList(topic));
+			consumer.seekToBeginning(consumer.assignment());
 
-        sb.append("<br/> >>> PASSO 1");
-        java.util.Map<String,java.util.List<PartitionInfo>> listTopics = consumer.listTopics();
-        System.out.println("list of topic size :" + listTopics.size());
-        for(String topic2 : listTopics.keySet()){
-            System.out.println("topic name :"+topic2);
-        }
+			sb = new StringBuilder();
+			
+			sb.append("[CONSUMINDO PRÓXIMAS MENSAGENS]: tópico: " + topic);
+			ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
 
-        sb.append("<br/> >>> PASSO 2");
-        
-        sb.append(records.count());
-        
-        sb.append("<br/> >>> PASSO 3");
+			sb.append("<br/> >>> PASSO 1");
+			java.util.Map<String,java.util.List<PartitionInfo>> listTopics = consumer.listTopics();
+			System.out.println("list of topic size :" + listTopics.size());
+			for(String topic2 : listTopics.keySet()){
+			    System.out.println("topic name :"+topic2);
+			}
 
-        for (ConsumerRecord<String, String> record : records) {
-        	      	
-            sb.append("<br/> >>> PASSO 4");
-        	
-        	String result = 
-        			String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",
-                    record.key(), record.value(), record.partition(), record.offset());
-        	
-        	sb.append(result);
-        }
-        
-        sb.append("<br/> >>> PASSO 5");
+			sb.append("<br/> >>> PASSO 2");
+			
+			sb.append(records.count());
+			
+			sb.append("<br/> >>> PASSO 3");
+
+			for (ConsumerRecord<String, String> record : records) {
+				      	
+			    sb.append("<br/> >>> PASSO 4");
+				
+				String result = 
+						String.format("<br/>[RECEBIDO]: chave=%s, valor=%s, partição=%d, offset=%d%n",
+			            record.key(), record.value(), record.partition(), record.offset());
+				
+				sb.append(result);
+			}
+			
+			sb.append("<br/> >>> PASSO 5");
+		} catch (Exception e) {
+			throw new RuntimeException(">>>>>> " + e.getMessage());
+		}
         
         return sb.toString();
     }

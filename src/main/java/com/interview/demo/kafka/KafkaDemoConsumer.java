@@ -20,14 +20,14 @@ public class KafkaDemoConsumer {
 	
     @KafkaListener(topics = "test-topic", groupId = "test-consumidor")
     public void consumirMensagem(String mensagem) {
-        System.out.println(">>> [MENSAGEM RECEBIDA]: " + mensagem);
+        System.out.println("<b/>### [MENSAGEM RECEBIDA]: " + mensagem);
         
         Cliente cliente = new Cliente();
         cliente.setEmail(mensagem.split(";")[0]);
         cliente.setNome(mensagem.split(";")[1]);
         cliente.setStatus(StatusEnum.CRIADO);
 
-        System.out.println(">> INSERINDO MENSAGEM NO BANCO: " + cliente);
+        System.out.println("<b/>### INSERINDO MENSAGEM NO BANCO: " + cliente);
         criarClientes.execute(cliente);
         
     }

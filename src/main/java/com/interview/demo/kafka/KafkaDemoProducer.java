@@ -17,7 +17,7 @@ public class KafkaDemoProducer {
 	    
 	    StringBuffer sb = new StringBuffer();
 	    for (int i=0; i<10; i++) {
-	    	String result = Math.random() + "@gmail.com-Flavio Santos " + Math.random();
+	    	String result = "<b/>" + Math.random() + "@gmail.com-Flavio Santos " + Math.random();
 		    
 	    	producer.send(new ProducerRecord<>("test-topic", "key", result));
 		    

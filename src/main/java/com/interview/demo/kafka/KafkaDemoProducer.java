@@ -21,6 +21,8 @@ public class KafkaDemoProducer {
 		    
 	    	producer.send(new ProducerRecord<>("test-topic", "key", result));
 		    
+	    	System.out.println(result);
+	    	
 		    sb.append(result);
 	    }
 	    producer.close();

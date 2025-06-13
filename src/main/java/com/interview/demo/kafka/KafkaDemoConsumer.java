@@ -27,6 +27,7 @@ public class KafkaDemoConsumer {
         cliente.setNome(mensagem.split(";")[1]);
         cliente.setStatus(StatusEnum.CRIADO);
 
+        System.out.println(">> INSERINDO MENSAGEM NO BANCO: " + cliente);
         criarClientes.execute(cliente);
         
     }

@@ -70,6 +70,11 @@ public class Cliente {
 	public void setStatus(StatusEnum status) {
 		this.status = status;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + ", status=" + status + "]";
+	}
     
 	
     

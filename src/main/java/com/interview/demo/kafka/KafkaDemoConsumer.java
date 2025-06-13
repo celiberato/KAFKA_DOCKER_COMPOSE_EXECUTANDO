@@ -27,7 +27,7 @@ public class KafkaDemoConsumer {
         cliente.setNome(mensagem.split(";")[1]);
         cliente.setStatus(StatusEnum.CRIADO);
 
-        criarClientes.execute(cliente)
+        criarClientes.execute(cliente);
         
     }
 }

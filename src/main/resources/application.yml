@@ -15,7 +15,7 @@ spring:
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaA vroSerializer
       compression-type: snappy # Configura o tipo de compressão que deve ser aplicado às mensagens
       acks: 1 # Configura o acks para "all" para garantir que todas as réplicas confirmem o recebimento da mensagem
       retries: 3 # Configura o número de tentativas que o producer deve realizar para enviar a mensagem

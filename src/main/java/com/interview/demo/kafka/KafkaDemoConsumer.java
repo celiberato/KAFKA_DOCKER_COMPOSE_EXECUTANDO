@@ -23,8 +23,8 @@ public class KafkaDemoConsumer {
         System.out.println("### [MENSAGEM RECEBIDA]: " + mensagem);
         
         Cliente cliente = new Cliente();
-        cliente.setEmail(mensagem.split(";")[0]);
-        cliente.setNome(mensagem.split(";")[1]);
+        cliente.setEmail(mensagem.split("-")[0]);
+        cliente.setNome(mensagem.split("-")[1]);
         cliente.setStatus(StatusEnum.CRIADO);
 
         System.out.println("### INSERINDO MENSAGEM NO BANCO: " + cliente);

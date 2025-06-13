@@ -15,7 +15,7 @@ public class KafkaDemoConsumer {
 
     public String executar() {
         String bootstrapServers = "localhost:9092";
-        String groupId = "test-consumidor";
+        String groupId = "consumer-test-consumidor";
         String topic = "test-topic";
 
         Properties props = new Properties();

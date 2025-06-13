@@ -17,13 +17,11 @@ public class KafkaDemoProducer {
 	    
 	    StringBuffer sb = new StringBuffer();
 	    for (int i=0; i<10; i++) {
-	    	String result = "\n" + Math.random() + "@gmail.com-Flavio Santos " + Math.random();
+	    	String result = Math.random() + "@gmail.com-Flavio Santos " + Math.random();
 		    
 	    	producer.send(new ProducerRecord<>("test-topic", "key", result));
-		    
-	    	System.out.println(result);
-	    	
-		    sb.append(result);
+		        	
+		    sb.append(result + "<b/>");
 	    }
 	    producer.close();
 	    

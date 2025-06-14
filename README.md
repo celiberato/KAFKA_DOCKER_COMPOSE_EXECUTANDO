@@ -12,6 +12,36 @@ sudo mkdir -p /data/zookeeper
 
 sudo chown -R zookeeper:zookeeper /data/zookeeper
 
+sudo wget https://dlcdn.apache.org/zookeeper/zookeeper-3.8.4/apache-zookeeper-3.8.4-bin.tar.gz
+
+sudo tar -xvf apache-zookeeper-3.8.4-bin.tar.gz
+
+sudo mv apache-zookeeper-3.8.4-bin zookeeper
+
+sudo chown -R zookeeper:zookeeper /opt/zookeeper
+
+---------------
+sudo vim /opt/zookeeper/conf/zoo.cfg
+
+tickTime = 2000
+
+dataDir = /data/zookeeper
+
+clientPort = 2181
+
+initLimit = 5
+
+syncLimit = 2
+-------
+
+cd /opt/zookeeper  
+
+sudo bin/zkServer.sh start
+
+bin/zkCli.sh -server 127.0.0.1:2181
+
+bin/zkServer.sh stop
+
 
 
 ----------

@@ -1,3 +1,5 @@
+https://phoenixnap.com/kb/install-apache-zookeeper
+
 sudo useradd zookeeper -m
 
 sudo usermod --shell /bin/bash zookeeper
@@ -20,6 +22,9 @@ sudo mv apache-zookeeper-3.8.4-bin zookeeper
 
 sudo chown -R zookeeper:zookeeper /opt/zookeeper
 
+sudo mkdir -p /var/lib/kafka/
+
+sudo chown kafka:kafka /var/lib/kafka/
 ---------------
 sudo vim /opt/zookeeper/conf/zoo.cfg
 

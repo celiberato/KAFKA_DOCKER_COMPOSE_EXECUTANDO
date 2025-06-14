@@ -47,6 +47,29 @@ bin/zkCli.sh -server 127.0.0.1:2181
 
 bin/zkServer.sh stop
 
+ sudo chmod 777  logs
+
+/etc/systemd/system/Kafka.service
+
+=======================
+[Unit]
+Description=Apache Kafka Server
+Requires=zookeeper.service
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=kafka
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+===========================================
+
+
+
 
 
 ----------

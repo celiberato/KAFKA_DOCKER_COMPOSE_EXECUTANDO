@@ -1,3 +1,4 @@
+sudo lsof -i tcp:9081
 
 https://www.fosstechnix.com/install-apache-kafka-and-zookeeper-ubuntu-24/
 

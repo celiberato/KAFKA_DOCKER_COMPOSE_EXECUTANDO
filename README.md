@@ -1,14 +1,13 @@
 
 https://www.fosstechnix.com/install-apache-kafka-and-zookeeper-ubuntu-24/
 
-sudo wget https://downloads.apache.org/kafka/3.7.0/kafka_2.12-3.7.0.tgz
+sudo wget https://downloads.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz
 
-sudo tar xzf kafka_2.12-3.7.0.tgz
+sudo tar xzf kafka_2.13-4.0.0.tgz
 
-sudo mv kafka_2.12-3.7.0 /opt/kafka
+sudo mv kafka_2.13-4.0.0.tgz /opt/kafka
 
 ]sudo bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group test-consumidor --describe
-
 
 
 sudo nano /etc/systemd/system/zookeeper.service

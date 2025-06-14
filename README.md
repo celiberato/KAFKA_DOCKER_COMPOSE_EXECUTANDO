@@ -1,3 +1,5 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-ubuntu-20-04
+
 https://phoenixnap.com/kb/install-apache-zookeeper
 
 sudo useradd zookeeper -m
@@ -68,7 +70,9 @@ Restart=on-failure
 WantedBy=multi-user.target
 ===========================================
 
+/usr/lib/jvm/java-17-openjdk-amd64/bin/java
 
+sudo /opt/zookeeper/bin/zkServer.sh start****
 
 
 

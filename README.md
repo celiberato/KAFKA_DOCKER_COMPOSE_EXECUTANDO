@@ -1,3 +1,20 @@
+sudo useradd zookeeper -m
+
+sudo usermod --shell /bin/bash zookeeper
+
+sudo passwd zookeeper
+
+sudo usermod -aG sudo zookeeper
+
+sudo getent group sudo
+
+sudo mkdir -p /data/zookeeper
+
+sudo chown -R zookeeper:zookeeper /data/zookeeper
+
+
+
+----------
 sudo lsof -i tcp:9081
 
 https://www.fosstechnix.com/install-apache-kafka-and-zookeeper-ubuntu-24/

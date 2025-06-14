@@ -11,4 +11,4 @@ public class InterviewApplication {
 		SpringApplication.run(InterviewApplication.class, args);
 	}
 
-};
+}

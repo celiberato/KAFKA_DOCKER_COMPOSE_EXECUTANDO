@@ -1,5 +1,6 @@
 server:
   port: 9081
+  address: 127.0.0.1
   servlet:
     context-path: /kafka-demo
 
@@ -12,8 +13,10 @@ spring:
       port: 27017
       host: localhost
   kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: test-consumidor
     producer:
-      bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: io.confluent.kafka.serializers.KafkaA vroSerializer
       compression-type: snappy # Configura o tipo de compressão que deve ser aplicado às mensagens
@@ -21,6 +24,20 @@ spring:
       retries: 3 # Configura o número de tentativas que o producer deve realizar para enviar a mensagem
     template:
       default-topic: test-topic
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: test-consumidor
+  autoconfigure:
+      exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  datasource:
+      driverClassName: org.h2.Driver
+      password: password
+      url: jdbc:h2:mem:testdb
+      username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+  security:
+      user:
+          name: sa
+          password: password

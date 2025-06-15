@@ -5,10 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("server")
 public class ServerConfig {
 
-	@Value("${port}")
+	@Value("${server.port}")
 	private int port;
 
 	//@Value("${server.address}")

@@ -2,7 +2,7 @@
  sudo /opt/zookeeper/bin/zkServer.sh start /opt/zookeeper/conf/zoo.cfg
 [2025-06-15 17:01:30,405] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.DataPlaneAcceptor)
 
-## SUBR SERVIÇO KAFKA
+## SUBIR SERVIÇO KAFKA
 sudo /home/kafka/bin/kafka-server-start.sh /home/kafka/config/server.properties
  
 ## ENVIAR MENSAGEM

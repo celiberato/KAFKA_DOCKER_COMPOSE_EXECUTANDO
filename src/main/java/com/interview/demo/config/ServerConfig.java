@@ -11,10 +11,10 @@ public class ServerConfig {
 	@Value("${server.port}")
 	private int port;
 
-	//@Value("${server.address}")
+	@Value("${server.address}")
 	private String address;
     
-	//@Value("${server.servlet.context-path}")
+	@Value("${server.servlet.context-path}")
 	private String contextPath;
 
     // Getters and Setters

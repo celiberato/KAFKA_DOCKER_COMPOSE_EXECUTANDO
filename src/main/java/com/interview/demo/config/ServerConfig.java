@@ -9,6 +9,7 @@ public class ServerConfig {
 
 	@Value("${server.port}")
 	private int port;
+	
 
 	//@Value("${server.address}")
 	private String address;

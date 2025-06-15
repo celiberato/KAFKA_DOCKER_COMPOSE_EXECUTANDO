@@ -9,7 +9,7 @@
 		<version>3.5.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.interview.demo</groupId>
+	<groupId>app</groupId>
 	<artifactId>app</artifactId>
 	<version>v1</version>
 	<name>kafka</name>

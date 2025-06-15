@@ -22,7 +22,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping(value = {"/kafka"})
-@Tag(name = "Kafka", description = "Produz e consome mensagens via kafka")
 public class KafkaController {
 
 	ClienteMapper mapper = new ClienteMapper();
@@ -34,7 +33,6 @@ public class KafkaController {
 
 	
 	@GetMapping("/produzir")
-	@Operation(summary = "Produz mensagens Kafka", description = "Produz mensagens Kafka")
 	public String produzir() {
 		KafkaDemoProducer producer = new KafkaDemoProducer();
 		
@@ -42,7 +40,6 @@ public class KafkaController {
 	}
 
 	@GetMapping("/nada")
-	@Operation(summary = "Produs mensagens Kafka", description = "Produs mensagens Kafka")
 	public String nada() {
 		return "OK!";
 	}

@@ -1,11 +1,8 @@
-
-
-
-
-
-
+## ENVIAR MENSAGEM
 sudo sh /home/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic my-topic
 
+
+## RECEBER MENSAGEM
 sudo sh kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic
 
 

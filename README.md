@@ -2,6 +2,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-
 
 https://phoenixnap.com/kb/install-apache-zookeeper
 
+sudo /opt/zookeeper/bin/zkServer.sh start /opt/zookeeper/conf/zoo.cfg
+
 sudo useradd zookeeper -m
 
 sudo usermod --shell /bin/bash zookeeper

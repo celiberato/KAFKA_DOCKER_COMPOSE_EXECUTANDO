@@ -1,17 +1,21 @@
 package com.interview.demo.config;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties("server")
 public class ServerConfig {
-    private int port;
-    private String address;
-    private String contextPath;
+
+	@Value("${server.port}")
+	private int port;
+
+	@Value("${server.address}")
+	private String address;
+    
+	@Value("${server.servlet.context-path}")
+	private String contextPath;
 
     // Getters and Setters
     public int getPort() {

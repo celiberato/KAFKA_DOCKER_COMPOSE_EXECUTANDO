@@ -37,6 +37,6 @@ spring:
           password: password
 server:
   port: 9081
-  address: 172.191.146.28
+  address: 127.0.0.1
   servlet:
     context-path: /kafka-demo

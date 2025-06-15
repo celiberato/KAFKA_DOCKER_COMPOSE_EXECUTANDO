@@ -11,6 +11,14 @@ sudo sh /home/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9
 ## RECEBER MENSAGEM
 sudo sh kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-topic
 
+## BAXAR KAFKA
+ sudo curl "https://downloads.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz" -o ~/Downloads/kafka.tgz
+
+sudo tar -xvzf ~/Downloads/kafka.tgz
+
+sudo curl "https://downloads.apache.org/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3.tar.gz" o ~/Downloads/zookeeper.gz
+
+sudo tar -xvzf ~/Downloads/zookeeper.gz
 
 
 

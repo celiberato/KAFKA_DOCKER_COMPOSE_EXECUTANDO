@@ -23,7 +23,7 @@ public class ServerConfig {
     }
 
     public void setPort(int port) {
-        this.port = port;
+        this.port = 9081;
     }
 
     public String getContextPath() {
@@ -31,7 +31,7 @@ public class ServerConfig {
     }
 
     public void setContextPath(String contextPath) {
-        this.contextPath = contextPath;
+        this.contextPath = "/kafka-demo";
     }
 
 	public String getAddress() {
@@ -39,7 +39,7 @@ public class ServerConfig {
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		this.address = "localhost";
 	}
     
     

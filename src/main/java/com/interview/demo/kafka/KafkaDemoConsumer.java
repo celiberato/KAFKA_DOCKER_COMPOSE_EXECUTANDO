@@ -29,6 +29,6 @@ public class KafkaDemoConsumer {
 
         System.out.println("### INSERINDO MENSAGEM NO BANCO: " + cliente);
         criarClientes.execute(cliente);
-        
+        	
     }
 }

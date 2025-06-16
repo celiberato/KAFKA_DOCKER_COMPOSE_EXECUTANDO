@@ -16,7 +16,7 @@ sudo sh kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-t
 
 sudo tar -xvzf ~/Downloads/kafka.tgz
 
-sudo curl "https://downloads.apache.org/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3.tar.gz" o ~/Downloads/zookeeper.tar.gz
+sudo curl "https://downloads.apache.org/zookeeper/zookeeper-3.9.3/apache-zookeeper-3.9.3.tar.gz" -o ~/Downloads/zookeeper.tar.gz
 
 sudo tar -xvzf ~/Downloads/tar -xvf file.tar
 

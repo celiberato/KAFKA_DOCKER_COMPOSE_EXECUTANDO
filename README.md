@@ -5,13 +5,23 @@ wget https://downloads.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz
 tar -xvzf kafka_2.13-4.0.0.tgz
 cd kafka_2.13-4.0.0
 
-
+---------------------------
 cd /opt/zookeepe
 sudo /opt/zookeeper/bin/zkServer.sh start  /opt/zookeeper/conf/zoo.cfg
+
+tickTime=2000
+dataDir=/var/lib/zookeeper
+clientPort=2181
+initLimit=5
+syncLimit=2
+admin.serverPort=10086
+---------------------------
+
 
 cd /opt/kafka
 sudo /opt/kafka/bin/kafka-server-start.sh  /opt/kafka/config/server.properties
 
+-------------------------
 
 ## SUBIR SERVIÇO ZOOKEEPER
  sudo /opt/zookeeper/bin/zkServer.sh start /opt/zookeeper/conf/zoo.cfg

@@ -7,7 +7,10 @@ cd kafka_2.13-4.0.0
 
 ---------------------------
 cd /opt/zookeepe
+
+
 sudo /opt/zookeeper/bin/zkServer.sh start  /opt/zookeeper/conf/zoo.cfg
+
 
 tickTime=2000
 dataDir=/var/lib/zookeeper

@@ -7,10 +7,10 @@ cd kafka_2.13-4.0.0
 
 
 cd /opt/zookeepe
-sudo /opt/zookeeper/bin/zkServer.sh start  conf/zoo.cfg
+sudo /opt/zookeeper/bin/zkServer.sh start  /opt/zookeeper/conf/zoo.cfg
 
 cd /opt/kafka
-sudo bin/kafka-server-start.sh  config/server.properties
+sudo /opt/kafka/bin/kafka-server-start.sh  /opt/kafka/config/server.properties
 
 
 ## SUBIR SERVIÇO ZOOKEEPER

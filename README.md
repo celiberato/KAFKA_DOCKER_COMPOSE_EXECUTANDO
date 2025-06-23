@@ -6,7 +6,7 @@ tar -xvzf kafka_2.13-4.0.0.tgz
 cd kafka_2.13-4.0.0
 
 ---------------------------
-cd /opt/zookeepe
+cd /opt/zookeeper
 sudo /opt/zookeeper/bin/zkServer.sh start  /opt/zookeeper/conf/zoo.cfg
 
 cd /opt/kafka

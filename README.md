@@ -1,3 +1,11 @@
+
+## SEM ZOOKEEPER
+
+wget https://downloads.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz
+tar -xvzf kafka_2.13-4.0.0.tgz
+cd kafka_2.13-4.0.0
+
+
 ## SUBIR SERVIÇO ZOOKEEPER
  sudo /opt/zookeeper/bin/zkServer.sh start /opt/zookeeper/conf/zoo.cfg
 [2025-06-15 17:01:30,405] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.DataPlaneAcceptor)
